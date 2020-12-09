@@ -14,7 +14,9 @@ jobs:
     - name: docker login
       env:
         DOCKER_USER: ${{ secrets.DOCKER_USER }}   
-        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}  
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        DOCKER_HOST: ${{ secrets.DOCKER_HOST }} 
+        DOCKER_SSH: ${{ secrets.DOCKER_SSH }} 
       run: |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
     - name: docker build csharp
